@@ -48,6 +48,10 @@ db.collection('cafe').onSnapshot(snapshot => {
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
+  if (form.name.value == '' || form.city.value == '') {
+    alert("input something");
+    return;
+  }
   db.collection('cafe').add({
     name: form.name.value,
     city: form.city.value
